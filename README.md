@@ -4,12 +4,12 @@ A single shell script to deploy wso2 products in the cloud via puppet
 
 ## What does it do?
 
-Once you prepare the puppet modules and hieradata, this script will ..
+Once you have access to cloud instances and completed preparing puppet modules + hieradata, this script will ..
 
  - Install required bundles (puppet/unzip) in the remote instance
  - Install dependent puppet modules (stdlib/java)
- - copy puppet modules and hieradata from local machine to remote server
- - export facters
+ - Copy puppet modules and hieradata from local machine to remote server
+ - Export facters
  - Run puppet (puppet apply): does not use a puppet master
 
 ## How to use
