@@ -5,22 +5,16 @@ key_file="/home/lasindu/wso2/key-file"
 destination_path="/home/ubuntu"
 user="ubuntu"
 
-function print_message () {
-  echo "----------------------------------------------------"
-  echo $1
-  echo "----------------------------------------------------"
-}
-
 while read server_config; do
   IFS=',' read -r -a array <<< $server_config
-  print_message "Server Configurations"
+  echo "----------------- Server Configurations -----------------"
   echo "IP: ${array[0]}"
   echo "Product Name: ${array[1]}"
   echo "Product Version: ${array[2]}"
   echo "Product Profile: ${array[3]}"
   echo "Environment: ${array[4]}"
 
-  print_message "Copying Puppet modules to Server"
+  echo "----------------- Copying Puppet-modules to Server -----------------"
   scp -o "StrictHostKeyChecking=no" -i $key_file -r $puppet_home $user@${array[0]}:$destination_path
   
   ssh -o "StrictHostKeyChecking=no" -i $key_file $user@${array[0]} << EOF
@@ -47,4 +41,4 @@ while read server_config; do
   puppet apply --modulepath=/etc/puppet/modules/ -e "include ${array[1]}" -v --detailed-exitcodes
 
 EOF
-done < server_configs.txt
+done < server_configs.conf

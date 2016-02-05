@@ -1,6 +1,6 @@
 # puppet-vm-deployment
 
-A single shell script to deploy wso2 products in the cloud via puppet
+A single shell script to deploy wso2 products in the cloud.
 
 ## What does it do?
 
@@ -10,7 +10,7 @@ Once you have access to cloud instances and completed preparing puppet modules +
  - Install dependent puppet modules (stdlib/java)
  - Copy puppet modules and hieradata from local machine to remote server
  - Export facters
- - Run puppet (puppet apply): does not use a puppet master
+ - Run puppet (via puppet apply): does not use a puppet master
 
 ## How to use
 
@@ -47,7 +47,7 @@ Once you have access to cloud instances and completed preparing puppet modules +
     [puppet_home]/hieradata/dev/wso2/wso2am/1.9.0
     ````
 
-6. Update server configuration details in server_configs.txt. You can include details of each server instance, starting from a new line
+6. Update server configuration details in server_configs.conf. You can include details of each server instance, starting from a new line
     
     ````
     #instance_ip,product_name,product_version,product_profile,environment
