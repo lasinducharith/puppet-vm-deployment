@@ -1,6 +1,6 @@
 # puppet-vm-deployment
 
-A single shell script to deploy wso2 products in the cloud.
+A single shell script to deploy wso2 products in the cloud without a puppet master.
 
 ## What does it do?
 
